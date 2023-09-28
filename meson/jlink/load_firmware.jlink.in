@@ -1,0 +1,6 @@
+h
+r
+loadfile @firmware_filepath@
+r
+g
+exit

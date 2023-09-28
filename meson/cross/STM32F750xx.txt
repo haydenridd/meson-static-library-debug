@@ -1,0 +1,31 @@
+[binaries]
+c = 'arm-none-eabi-gcc'
+cpp = 'arm-none-eabi-c++'
+ar = 'arm-none-eabi-ar'
+strip = 'arm-none-eabi-strip'
+
+[properties]
+# Set so Meson's sanity check passes
+needs_exe_wrapper = true
+
+[host_machine]
+system = 'none'
+cpu_family = 'arm'
+cpu = 'cortex-m7'
+endian = 'little'
+
+[constants]
+common_args = [
+    '-mcpu=cortex-m7', 
+    '-mfloat-abi=hard',
+    '-mfpu=fpv5-sp-d16', 
+    '-mabi=aapcs', 
+    '-mthumb']
+common_compile_args = []
+common_link_args = ['--specs=nosys.specs', '--specs=nano.specs']
+
+[built-in options]
+c_args = common_args + common_compile_args
+c_link_args = common_args + common_link_args
+cpp_args = common_args + common_compile_args 
+cpp_link_args = common_args + common_link_args

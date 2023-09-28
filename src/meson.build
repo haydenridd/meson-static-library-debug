@@ -1,0 +1,2 @@
+subdir('hal')
+subdir('app')

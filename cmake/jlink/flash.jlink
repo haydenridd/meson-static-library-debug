@@ -1,0 +1,6 @@
+connect
+h
+loadfile /home/hayden/Documents/meson_linker_troubleshooting/build/APP_cmake.elf
+r
+g
+exit

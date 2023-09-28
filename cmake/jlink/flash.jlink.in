@@ -1,0 +1,6 @@
+connect
+h
+loadfile @JLINK_FLASH_TARGET_FILE@
+r
+g
+exit

@@ -1,0 +1,43 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [],
+    "configurePresets": [
+        {
+            "name": "default",
+            "generator": "Ninja",
+            "binaryDir": "build",
+            "displayName": "STM32F707xx",
+            "description": "Cross compilation build for the STM32F707xx MCU",
+            "toolchainFile": "cmake/cross/toolchain_stm32f407xx.cmake",
+            "cacheVariables": {
+                "CMAKE_TRY_COMPILE_TARGET_TYPE": "STATIC_LIBRARY",
+                "CMAKE_SYSTEM_NAME": "Generic",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "build",
+            "configurePreset": "default",
+            "jobs": 10
+        },
+        {
+            "name": "clean",
+            "configurePreset": "default",
+            "targets": "clean",
+            "jobs": 10
+        },
+        {
+            "name": "flash",
+            "configurePreset": "default",
+            "targets": "flash",
+            "jobs": 10
+        }
+    ]
+}
